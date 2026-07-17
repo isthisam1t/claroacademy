@@ -16,16 +16,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Mobile menu drawer functionality
   const hamburger = document.getElementById('hamburger-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer-menu');
+  const overlay = document.getElementById('mobile-menu-overlay');
   const body = document.body;
 
   const toggleMobileMenu = () => {
     hamburger.classList.toggle('active');
     mobileDrawer.classList.toggle('active');
+    if (overlay) overlay.classList.toggle('active');
     // Prevent scrolling when mobile menu is open
     body.classList.toggle('overflow-hidden');
   };
 
   hamburger.addEventListener('click', toggleMobileMenu);
+
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      if (mobileDrawer.classList.contains('active')) {
+        toggleMobileMenu();
+      }
+    });
+  }
 
   // Close mobile drawer when clicking a nav link
   const mobileLinks = [

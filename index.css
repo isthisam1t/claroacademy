@@ -131,11 +131,18 @@ body {
 
 /* Margin & Padding utilities */
 .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
-.py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-.pt-20 { padding-top: 5rem; }
-.py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+.py-12 { padding-top: 2rem; padding-bottom: 2rem; }
+.py-20 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.pt-20 { padding-top: 3.5rem; }
+.py-24 { padding-top: 4.5rem; padding-bottom: 4.5rem; }
 .pt-24 { padding-top: var(--header-height); }
+
+@media (min-width: 768px) {
+  .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+  .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+  .pt-20 { padding-top: 5rem; }
+  .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+}
 .pb-8 { padding-bottom: 2rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
@@ -166,8 +173,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-homehero-headline {
   font-family: var(--font-family-title);
-  font-size: 4rem;
-  line-height: 1.2;
+  font-size: clamp(3rem, 10vw, 4rem);
+  line-height: 1.1;
   text-transform: lowercase;
   letter-spacing: -0.05em;
   hyphens: none;
@@ -354,12 +361,13 @@ header nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 1.75rem;
-  height: 1.25rem;
+  width: 2.75rem;
+  height: 2.5rem;
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 100;
+  padding: 0.625rem 0.5rem;
 }
 
 @media (min-width: 1024px) {
@@ -387,6 +395,23 @@ header nav {
 
 .hamburger.active span:last-child {
   transform: rotate(-45deg) translate(2px, 2px);
+}
+
+/* Mobile Menu Drawer Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(31, 31, 31, 0.4);
+  z-index: 35;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Mobile Menu Drawer */
@@ -479,13 +504,19 @@ header nav {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 2.5rem;
+  padding: 1.5rem;
   width: 100%;
   background: linear-gradient(to top, rgba(31,31,31,0.7) 0%, rgba(31,31,31,0) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-card-overlay {
+    padding: 2.5rem;
+  }
 }
 
 .hero-card-title {
@@ -544,10 +575,16 @@ header nav {
 }
 
 .program-content {
-  padding: 2.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .program-content {
+    padding: 2.5rem;
+  }
 }
 
 .program-badge {
@@ -721,8 +758,14 @@ header nav {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
-  padding: 3rem;
+  padding: 1.5rem;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .booking-form-wrapper {
+    padding: 3rem;
+  }
 }
 
 .form-group-row {
