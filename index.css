@@ -135,7 +135,10 @@ body {
 .py-20 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
 .pt-20 { padding-top: 3.5rem; }
 .py-24 { padding-top: 4.5rem; padding-bottom: 4.5rem; }
-.pt-24 { padding-top: var(--header-height); }
+.pt-24 { padding-top: 9rem; }
+@media (min-width: 1024px) {
+  .pt-24 { padding-top: var(--header-height); }
+}
 
 @media (min-width: 768px) {
   .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
@@ -274,7 +277,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--header-height);
+  height: 9rem;
   z-index: 50;
   transition: all 0.3s ease-in-out;
   background-color: rgba(208, 223, 241, 0.95);
@@ -285,21 +288,35 @@ header {
 
 header.scrolled {
   background-color: rgba(255, 255, 255, 0.96);
-  height: 5rem;
+  height: 8rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1024px) {
+  header {
+    height: var(--header-height);
+  }
   header.scrolled {
-    height: 5.5rem;
+    height: 5rem;
   }
 }
 
 header nav {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   align-items: center;
   height: 100%;
+  padding: 0.75rem 0;
+}
+
+@media (min-width: 1024px) {
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
 }
 
 .logo-link {
@@ -311,11 +328,50 @@ header nav {
 
 .logo-text {
   font-family: var(--font-family-title);
-  font-size: clamp(1.4rem, 5.5vw, 2.2rem);
+  font-size: clamp(2rem, 7.5vw, 2.8rem);
   letter-spacing: -0.04em;
   text-transform: lowercase;
   transition: opacity 0.3s ease;
   white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .logo-text {
+    font-size: 2.2rem;
+  }
+}
+
+.btn-mobile-book {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  display: inline-flex !important;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+}
+
+.logo-link {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  justify-self: center;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .btn-mobile-book {
+    display: none !important;
+  }
+  .logo-link {
+    margin-top: 0;
+  }
 }
 
 .logo-link:hover .logo-text {
