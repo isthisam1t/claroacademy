@@ -100,4 +100,39 @@ document.addEventListener('DOMContentLoaded', () => {
       bookingForm.reset();
     });
   }
+
+  // 5. Contact Form Submission handling
+  const contactForm = document.getElementById('contact-us-form');
+  const contactSuccessMessage = document.getElementById('contact-success-msg');
+
+  if (contactForm && contactSuccessMessage) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const contactData = {
+        name: document.getElementById('contact-name').value,
+        email: document.getElementById('contact-email').value,
+        phone: document.getElementById('contact-phone').value,
+        topic: document.getElementById('contact-topic').value,
+        message: document.getElementById('contact-message').value
+      };
+
+      console.log('Contact form submitted successfully:', contactData);
+
+      contactForm.style.transition = 'opacity 0.3s ease';
+      contactForm.style.opacity = '0';
+      
+      setTimeout(() => {
+        contactForm.style.display = 'none';
+        contactSuccessMessage.style.display = 'block';
+        contactSuccessMessage.style.opacity = '0';
+        contactSuccessMessage.style.transition = 'opacity 0.5s ease';
+        
+        contactSuccessMessage.offsetHeight;
+        contactSuccessMessage.style.opacity = '1';
+      }, 300);
+      
+      contactForm.reset();
+    });
+  }
 });

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Contact Us | Claro Academy</title>
+  <meta name="description" content="Get in touch with Claro Academy. Submit your inquiries, request custom coaching schedules, or talk to our coaches. We will find the perfect tennis solution for you.">
+  <link rel="canonical" href="./contact.html">
+  
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="antialiased">
+
+  <!-- Header / Navigation (Consistent with Home Page) -->
+  <header id="header">
+    <div class="container h-full">
+      <nav>
+        <!-- Logo -->
+        <a href="index.html" class="logo-link" id="logo-main">
+          <span class="logo-text">claro academy</span>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <ul class="nav-menu-desktop" id="nav-menu">
+          <li><a href="index.html#programs" class="nav-link">programs</a></li>
+          <li><a href="index.html#about-us" class="nav-link">about us</a></li>
+          <li>
+            <a href="index.html#book-now" class="btn btn-primary" id="btn-header-booking">
+              <span class="text-body-m-highlight">book now</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile Hamburg Button -->
+        <button class="hamburger" id="hamburger-menu-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer-menu">
+    <ul>
+      <li><a href="index.html#programs" id="mob-link-programs">programs</a></li>
+      <li><a href="index.html#about-us" id="mob-link-about">about us</a></li>
+      <li>
+        <a href="index.html#book-now" class="btn btn-primary w-full text-center" id="mob-btn-booking">
+          <span class="text-body-m-highlight">book now</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <main id="maincontent" class="pt-24">
+    
+    <!-- Top Banner (Contact Title and Description) -->
+    <section class="py-20 bg-general-bg-alt-high text-general-on-bg">
+      <div class="container grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-homehero-headline" style="font-size: 5rem; line-height: 1.1; margin: 0;">
+            contact us
+          </h1>
+        </div>
+        <div>
+          <p class="text-body-xl" style="color: var(--text-color-muted); line-height: 1.6;">
+            Claro Academy is a tennis academy dedicated to providing world-class training and mentorship. Whatever is on your mind, we will find a (sporty) solution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Talk to Us Section (Split Image and Form) -->
+    <section class="py-24 bg-white">
+      <div class="container grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <!-- Image Column -->
+        <div class="contact-image-col">
+          <img src="images/i_cbDf6wt.jpg" alt="Coaching team relaxing together at a table" loading="eager">
+        </div>
+        
+        <!-- Form Column -->
+        <div class="contact-form-col">
+          <h2 class="text-headline-m mb-8" style="font-size: 2.5rem; text-transform: lowercase;">Talk to us!</h2>
+          
+          <!-- Success Message -->
+          <div class="form-success-message" id="contact-success-msg" style="background-color: var(--color-light-grey); border-radius: 1rem; padding: 2.5rem; border: 1px solid rgba(0,0,0,0.05);">
+            <div class="success-icon" style="margin-bottom: 1rem;">
+              <i class="ph ph-check"></i>
+            </div>
+            <h3 class="text-headline-s text-general-on-bg mb-2">message sent!</h3>
+            <p class="text-body-l" style="color: var(--text-color-muted);">
+              Thank you for contacting Claro Academy. Our team will get back to you shortly.
+            </p>
+          </div>
+          
+          <!-- Core Contact Form -->
+          <form class="contact-form" id="contact-us-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="contact-name">first & last name *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">email *</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="Your Email" required>
+              </div>
+            </div>
+            
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="contact-phone">telephone number</label>
+                <input type="tel" id="contact-phone" class="form-control" placeholder="Your Phone">
+              </div>
+              <div class="form-group">
+                <label for="contact-topic">topic</label>
+                <input type="text" id="contact-topic" class="form-control" placeholder="e.g. Booking, Coaching...">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-message">your message *</label>
+              <textarea id="contact-message" class="form-control" rows="4" placeholder="How can we help you?" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" id="btn-submit-contact" style="width: fit-content; padding: 0.75rem 2rem;">
+              <span class="text-body-m-highlight">send message</span>
+            </button>
+          </form>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section (Identical to main site, no phone number, New York address) -->
+  <footer class="bg-general-on-bg text-white pt-20">
+    <div class="footer-top pb-12">
+      <div class="container grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+        <!-- Left Side: Directions/Contact -->
+        <div class="footer-left-col">
+          <h2 class="text-headline-s mb-6">How to find us:</h2>
+          <p class="text-body-l mb-8" style="color: rgba(255,255,255,0.75); max-width: 80%; line-height: 1.6;">
+            Our academy facilities are open daily for training. For written inquiries, please submit our booking form or drop by our office.
+          </p>
+          <a href="contact.html" class="btn btn-primary" id="btn-footer-contact">
+            <span class="text-body-m-highlight">Contact us</span>
+          </a>
+        </div>
+        
+        <!-- Right Side: Details -->
+        <div class="footer-right-col flex flex-col md:flex-row justify-between gap-8 md:gap-4">
+          <div class="footer-address">
+            <h3 class="footer-logo">claro academy</h3>
+            <p>
+              <a href="mailto:office@claro-academy.com" style="color: var(--color-white); text-decoration: none; font-weight: 600;">office@claro-academy.com</a>
+              <br>
+              145 West 44th Street
+              <br>
+              New York, NY 10036, USA
+            </p>
+          </div>
+          
+          <div class="footer-hours">
+            <h4 class="text-body-xl mb-4 text-primary" style="font-family: var(--font-family-body); font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05rem;">Opening hours</h4>
+            <ul class="footer-nav" style="gap: 0.25rem;">
+              <li style="color: rgba(255,255,255,0.75); font-size: 0.95rem;">Mon - Fri: 08:00 - 20:00</li>
+              <li style="color: rgba(255,255,255,0.75); font-size: 0.95rem;">Sat - Sun: 09:00 - 18:00</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Footer Bottom: Copyright & Socials -->
+    <div class="footer-bottom container">
+      <p>© 2026 Claro Academy. All rights reserved. Designed with inspiration from Sport Fleiss.</p>
+      <div class="footer-socials">
+        <a href="https://instagram.com/" target="_blank" aria-label="Follow Claro Academy on Instagram" id="social-instagram">
+          <i class="ph ph-instagram-logo"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Follow Claro Academy on Facebook" id="social-facebook">
+          <i class="ph ph-facebook-logo"></i>
+        </a>
+        <a href="https://youtube.com/" target="_blank" aria-label="Subscribe to Claro Academy on YouTube" id="social-youtube">
+          <i class="ph ph-youtube-logo"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="index.js"></script>
+</body>
+</html>
